@@ -27,8 +27,8 @@ Route::middleware('auth')->group(function () {
     Route::post('rekomendasi/{rekomendasi}/tindak-lanjut', [TindakLanjutController::class, 'store'])->name('tindak-lanjut.store');
     Route::get('/profil', [UserController::class, 'profil'])->name('profil');
     Route::put('/profil', [UserController::class, 'updateProfil'])->name('profil.update');
+    Route::resource('auditi', AuditiController::class);
     Route::middleware('role:admin')->group(function () {
-        Route::resource('auditi', AuditiController::class);
         Route::resource('user', UserController::class);
     });
 });

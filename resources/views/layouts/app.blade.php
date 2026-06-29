@@ -36,8 +36,7 @@
                 Dashboard
             </a>
 
-            <!-- 2. Data Auditi (Admin Only) -->
-            @if(auth()->user()->isAdmin())
+            <!-- 2. Data Auditi -->
             <a href="{{ route('auditi.index') }}" 
                class="flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors group {{ request()->routeIs('auditi.*') ? 'bg-blue-600 text-white shadow-md' : 'text-blue-100 hover:bg-white/10 hover:text-white' }}">
                 <svg class="w-5 h-5 mr-3 transition-colors {{ request()->routeIs('auditi.*') ? 'text-white' : 'text-blue-300 group-hover:text-white' }}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -45,7 +44,6 @@
                 </svg>
                 Data Auditi
             </a>
-            @endif
 
             <!-- 3. Data LHP -->
             <a href="{{ route('lhp.index') }}" 
